@@ -7,6 +7,7 @@ import {InjectModel} from "@nestjs/mongoose";
 export class ItemsService {
   constructor(@InjectModel('Item') private readonly itemModel: Model<Item>) {}
 
+
   async findAll(): Promise<Item[]> {
     return await this.itemModel.find();
   }
